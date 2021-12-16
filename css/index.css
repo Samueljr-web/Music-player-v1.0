@@ -1,0 +1,157 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #eee;
+  transition: .3s;
+}
+
+h2{
+  text-align: center;
+  color: #000;
+}
+.container {
+  width: 16rem;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.container .top{
+  display: flex;
+  justify-content: space-between;
+}
+.container #songtitle {
+  color: #06DDFB;
+}
+.album{
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9N0Ju0z62nXnEgY-l4-uQPKrUf-z3R--oNg&usqp=CAU") #ccc;
+  width: 15rem;
+  height: 18rem;
+}
+
+ .artist{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+.artist img{
+  width: 4rem;
+  height: 4rem;
+  padding: 0.1em;
+  border-radius: 50px;
+  border: 3px solid #000;
+  z-index: 1;
+  animation: rotate 3s linear infinite;
+  animation-play-state: paused;
+  }
+
+  .container.play .artist img{
+    animation-play-state: running;
+  }
+
+@keyframes rotate{
+  from {transform:rotate(0deg) ;}
+  to {transform:rotate(360deg) ;}
+}
+
+.progress-container{
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+  height: 4px;
+  width: 100%;
+}
+.progress{
+  background-color: #05C0FF;
+  border-radius: 5px;
+  height: 100%;
+  width: 0;
+  transition: width 0.1s linear;
+}
+.controls{
+  background: #ddd;
+  height: 4rem;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.controls .ctrl{
+  display: flex;
+  margin: 0.5em;
+}
+.ctrl i{
+  font-size: 1.5em;
+  margin: 0.5em;
+  cursor: pointer;
+  
+}
+.ctrl i.fa-play, .fa-pause{
+  background: #fff;
+  width: 2rem;
+  height: 2rem;
+  padding: 5px;
+  border-radius: 2.5em;
+  text-align: center;
+}
+
+
+
+/* Dark effect */
+
+.checkbox{
+  position: absolute;
+  opacity: 0;
+}
+
+.theme{
+  margin-bottom: 2em;
+}
+.label{
+  background: #222;
+  width: 3.4em;
+  height: 1.5em;
+  position: relative;
+  display: flex;
+  border-radius: 50px;
+  float: right;
+  margin-right: 1em;
+}
+
+.label .ball{
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50px;
+  top: 2.2px;
+  left: 2.5px;
+  transform: translate(0);
+  transition: .3s;
+}
+
+  .checkbox:checked + .label .ball{
+    transform: translate(30px);
+    transition: .3s;
+  }
+  
+  .darktheme{
+    background: #233;
+    transition: .3s;
+  }
+  
+  .cont{
+    border: 2px solid #fff;
+  }
+  .color{
+    color: #fff;
+  }
+  .randombtn{
+    color: #0000ff;
+  }
